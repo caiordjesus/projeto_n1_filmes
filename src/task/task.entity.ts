@@ -15,28 +15,3 @@ export class Task extends BaseEntity{
     @Column()
     status: TaskStatus;
 }
-
-@Entity()
-export class Movies {
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
-    name: string;
-
-    @Column()
-    classification: number;
-
-    @Column()
-    genre: string;
-
-    @Column()
-    director: string;
-
-    @Column()
-    duration: number;
-
-    @Column()
-    mainCast: string;
-
-}
