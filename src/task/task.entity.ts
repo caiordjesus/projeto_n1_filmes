@@ -1,5 +1,6 @@
 import { BaseEntity, Entity, PrimaryGeneratedColumn, Column, Double } from "typeorm";
 import { TaskStatus } from "./task-status.enum";
+import { MoviesClassification } from "./movies-classification.enum";
 
 @Entity()
 export class Task extends BaseEntity{
@@ -25,7 +26,7 @@ export class Movies {
     name: string;
 
     @Column()
-    classification: number;
+    classification: MoviesClassification;
 
     @Column()
     genre: string;
@@ -37,6 +38,6 @@ export class Movies {
     duration: number;
 
     @Column()
-    mainCast: string;
+    main_cast: string;
 
 }
