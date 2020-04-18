@@ -31,7 +31,12 @@ export class MoviesService {
 
     async updateMovies(id: number, updateMoviesDto: createMoviesDto): Promise<Movies>{
         await this.moviesRepository.update(id, updateMoviesDto)
-        console.log('passei aqui tb')
+        return this.getById(id);
+    }
+
+    async removeMovies(id: number): Promise<Movies>{
+        console.log('AQUII')
+        this.moviesRepository.delete(id)
         return this.getById(id);
     }
 

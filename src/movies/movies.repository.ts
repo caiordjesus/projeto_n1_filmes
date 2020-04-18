@@ -6,6 +6,7 @@ import { createMoviesDto } from "./dto/create-movies.dto";
 export class MoviesRepository extends Repository<Movies> {
     async getMovies(): Promise<Movies[]> {
         const query = this.createQueryBuilder('movies');
+        
         return await query.getMany();
     }
 

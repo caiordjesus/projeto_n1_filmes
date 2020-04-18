@@ -1,5 +1,5 @@
 import { MoviesService } from './movies.service';
-import { Controller, Get, Post, UsePipes, ValidationPipe, Body, Param, ParseIntPipe, Put, Patch } from '@nestjs/common';
+import { Controller, Get, Post, UsePipes, ValidationPipe, Body, Param, ParseIntPipe, Put, Delete } from '@nestjs/common';
 import { Movies } from './movies.entity';
 import { createMoviesDto } from './dto/create-movies.dto';
 @Controller('movies')
@@ -28,8 +28,12 @@ export class MoviesController {
 
     @Put('/:id')
     async updateMovies(@Param('id', ParseIntPipe) id: number, @Body()updateMoviesDto: Movies): Promise<Movies>{
-        console.log('passei aqui')
         return this.moviesService.updateMovies(id, updateMoviesDto);
+    }
+
+    @Delete('/:id')
+    async removeMovies(@Param('id', ParseIntPipe) id: number): Promise<Movies>{
+        return this.moviesService.removeMovies(id);
     }
 }
 
