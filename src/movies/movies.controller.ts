@@ -28,9 +28,8 @@ export class MoviesController {
 
     @Put('/:id')
     async updateMovies(@Param('id', ParseIntPipe) id: number, @Body()updateMoviesDto: Movies): Promise<Movies>{
-        updateMoviesDto.id = id;
         console.log('passei aqui')
-        return this.moviesService.updateMovies(updateMoviesDto);
+        return this.moviesService.updateMovies(id, updateMoviesDto);
     }
 }
 

@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MoviesRepository } from './movies.repository';
 import { Movies } from './movies.entity';
 import { createMoviesDto } from './dto/create-movies.dto';
-import { updateMoviesDto } from './dto/update-movies.dto';
 
 @Injectable()
 export class MoviesService {
@@ -30,21 +29,10 @@ export class MoviesService {
         return this.moviesRepository.createMovies(createMoviesDto);
     }
 
-    async updateMovies(updateMoviesDto: createMoviesDto): Promise<Movies>{
-        let updateMovies;
+    async updateMovies(id: number, updateMoviesDto: createMoviesDto): Promise<Movies>{
+        await this.moviesRepository.update(id, updateMoviesDto)
         console.log('passei aqui tb')
-            if(updateMovies){
-                updateMovies.name = updateMoviesDto.name;
-                updateMovies.classification = updateMoviesDto.classification;
-                updateMovies.genre = updateMoviesDto.genre;
-                updateMovies.director = updateMoviesDto.director;
-                updateMovies.duration = updateMoviesDto.duration;
-                updateMovies.main_cast = updateMoviesDto.main_cast;
-                updateMovies.favorite = updateMoviesDto.favorite;
-                await updateMovies.save();
-                console.log('se passar por aqui é SUCESSO')
-            }
-        return updateMovies;
+        return this.getById(id);
     }
 
 

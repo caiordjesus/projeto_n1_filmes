@@ -1,7 +1,6 @@
 import { EntityRepository, Repository, getConnection, UpdateQueryBuilder } from "typeorm";
 import { Movies } from "./movies.entity";
 import { createMoviesDto } from "./dto/create-movies.dto";
-import { updateMoviesDto } from "./dto/update-movies.dto";
 
 @EntityRepository(Movies)
 export class MoviesRepository extends Repository<Movies> {
