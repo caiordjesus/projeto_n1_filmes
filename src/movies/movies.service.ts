@@ -3,12 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MoviesRepository } from './movies.repository';
 import { Movies } from './movies.entity';
 import { createMoviesDto } from './dto/create-movies.dto';
+import { GenreRepository } from 'src/genre/genre.repository';
 
 @Injectable()
 export class MoviesService {
     constructor(
         @InjectRepository(MoviesRepository)
-        private moviesRepository: MoviesRepository
+        private moviesRepository: MoviesRepository,
+        private genreRepository: GenreRepository
     ){}
 
     async findAll(): Promise<Movies[]>{
@@ -26,7 +28,15 @@ export class MoviesService {
     }
 
     async postMovies(createMoviesDto: createMoviesDto): Promise<Movies>{
-        return this.moviesRepository.createMovies(createMoviesDto);
+        let lista_genres = []
+        for(let id_genre of createMoviesDto.genres){
+            let found = await this.genreRepository.findOne(id_genre);
+            if (found) {
+                lista_genres.push(found)
+            }
+        }
+
+        return this.moviesRepository.createMovies(createMoviesDto, lista_genres);
     }
 
     async updateMovies(id: number, updateMoviesDto: createMoviesDto): Promise<Movies>{
@@ -35,10 +45,8 @@ export class MoviesService {
     }
 
     async removeMovies(id: number): Promise<Movies>{
-        console.log('AQUII')
         this.moviesRepository.delete(id)
         return this.getById(id);
     }
-
 
 }

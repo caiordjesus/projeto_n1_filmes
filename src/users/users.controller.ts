@@ -16,8 +16,7 @@ export class UsersController {
 
     @Post()
     @UsePipes(ValidationPipe)
-    async postUsers(
-        @Body()createUsersDto: createUsersDto): Promise<Users> {
+    async postUsers(@Body() createUsersDto: createUsersDto): Promise<Users> {
         return this.usersService.postUsers(createUsersDto);
     }
 
