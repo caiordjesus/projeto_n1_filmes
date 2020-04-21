@@ -3,15 +3,16 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { UsersRepository } from './users.repository';
 import { Users } from './users.entity';
 import { createUsersDto } from './dto/create-users.dto';
-import { Movies } from 'src/movies/movies.entity';
-import { MoviesRepository } from 'src/movies/movies.repository';
-import { createMoviesDto } from 'src/movies/dto/create-movies.dto';
+import { GenreRepository } from 'src/genre/genre.repository';
 
 @Injectable()
 export class UsersService {
     constructor(
         @InjectRepository(UsersRepository)
-        private usersRepository: UsersRepository
+        @InjectRepository(GenreRepository)
+        private usersRepository: UsersRepository,
+        private genreRepository: GenreRepository
+        
     ){}
 
     async findAll(): Promise<Users[]>{
@@ -29,7 +30,16 @@ export class UsersService {
     }
 
     async postUsers(createUsersDto: createUsersDto): Promise<Users>{
-        return this.usersRepository.createUsers(createUsersDto);
+        let lista_genres = []
+
+        // [1, 2]
+        for(let id_genre of createUsersDto.fgenre){
+            let found = await this.genreRepository.findOne(id_genre);
+            if (found) {
+                lista_genres.push(found)
+            }
+        }
+        return this.usersRepository.createUsers(createUsersDto, lista_genres);
     }
 
     async updateUsers(id: number, updateUsersDto: createUsersDto): Promise<Users>{
@@ -40,11 +50,6 @@ export class UsersService {
     async removeUsers(id: number): Promise<Users>{
         this.usersRepository.delete(id)
         return this.getById(id);
-    }
-
-    async usersMovie(genre: number, usersMovie: createMoviesDto){
-        const fMovies = new Movies();
-        //fMovies.id = await MoviesRepository.findOne(genre);//
     }
 
 }

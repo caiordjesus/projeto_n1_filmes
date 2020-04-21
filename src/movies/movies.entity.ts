@@ -1,6 +1,6 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from "typeorm";
 import { MoviesClassification } from "./movies_classification.enum";
-import { MoviesGenres } from "./movies_genres.enum";
+import { Genre } from "src/genre/genre.entity";
 
 @Entity()
 export class Movies extends BaseEntity{
@@ -13,19 +13,7 @@ export class Movies extends BaseEntity{
     @Column({ nullable: true})
     classification: MoviesClassification;
 
-    @Column({ nullable: true})
-    genre: MoviesGenres;
-
-    @Column({ nullable: true})
-    director: string;
-
-    @Column({ nullable: true})
-    duration: number;
-
-    @Column({ nullable: true})
-    main_cast: string;
-
-    @Column({ nullable: true})
-    favorite: boolean;
-
+    @ManyToMany(type => Genre)
+    @JoinTable()
+    genres: Genre[];
 }

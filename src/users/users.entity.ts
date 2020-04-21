@@ -1,6 +1,5 @@
 import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from "typeorm";
-import { Movies } from "src/movies/movies.entity";
-import { UsersGenres } from "./users-genres.enum";
+import { Genre } from "src/genre/genre.entity";
 
 @Entity()
 export class Users extends BaseEntity{
@@ -11,22 +10,12 @@ export class Users extends BaseEntity{
     name: string;
 
     @Column({ nullable: true})
-    dirth: string;
+    genero: string;
 
-    @Column({ nullable: true})
-    gender: string;
-
-    @Column({ nullable: true})
-    favorite_genre: UsersGenres;
-
-    @Column({ nullable: true})
+    @Column()
     email: string;
 
-    @Column({ nullable: true}) 
-    phone_number: number;
-
-    @ManyToMany(type => Movies)
+    @ManyToMany(type => Genre)
     @JoinTable()
-    fmovies: Movies[];
-
+    fgenre: Genre[];
 }
