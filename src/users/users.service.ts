@@ -3,6 +3,9 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { UsersRepository } from './users.repository';
 import { Users } from './users.entity';
 import { createUsersDto } from './dto/create-users.dto';
+import { Movies } from 'src/movies/movies.entity';
+import { MoviesRepository } from 'src/movies/movies.repository';
+import { createMoviesDto } from 'src/movies/dto/create-movies.dto';
 
 @Injectable()
 export class UsersService {
@@ -39,5 +42,9 @@ export class UsersService {
         return this.getById(id);
     }
 
+    async usersMovie(genre: number, usersMovie: createMoviesDto){
+        const fMovies = new Movies();
+        //fMovies.id = await MoviesRepository.findOne(genre);//
+    }
 
 }

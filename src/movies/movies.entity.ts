@@ -1,5 +1,6 @@
 import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 import { MoviesClassification } from "./movies_classification.enum";
+import { MoviesGenres } from "./movies_genres.enum";
 
 @Entity()
 export class Movies extends BaseEntity{
@@ -13,7 +14,7 @@ export class Movies extends BaseEntity{
     classification: MoviesClassification;
 
     @Column({ nullable: true})
-    genre: string;
+    genre: MoviesGenres;
 
     @Column({ nullable: true})
     director: string;

@@ -1,10 +1,14 @@
-import { IsNotEmpty, IsDateString } from "class-validator";
+import { IsNotEmpty } from "class-validator";
+import { UsersGenres } from "../users-genres.enum";
+import { Movies } from "src/movies/movies.entity";
 
 export class createUsersDto{
     @IsNotEmpty()
-    nome: string;
-    genero: string;
-    genero_favorito: string;
+    name: string;
+    dirth: string;
+    gender: string;
+    favorite_genre: UsersGenres;
     email: string;
-    telefone: number;
+    phone_number: number;
+    fmovies: Movies[];
 }
