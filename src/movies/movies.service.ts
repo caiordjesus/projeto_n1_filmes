@@ -40,8 +40,21 @@ export class MoviesService {
     }
 
     async updateMovies(id: number, updateMoviesDto: createMoviesDto): Promise<Movies>{
-        await this.moviesRepository.update(id, updateMoviesDto)
-        return this.getById(id);
+        let lista_genres = []
+        for(let id_genre of updateMoviesDto.genres){
+            let found = await this.genreRepository.findOne(id_genre);
+            if (found) {
+                lista_genres.push(found)
+            }
+        }
+        updateMoviesDto.genres = lista_genres;
+
+        const property = await this.moviesRepository.findOne(id);
+        
+        return this.moviesRepository.save({
+            ...property,
+            ...updateMoviesDto
+        });
     }
 
     async removeMovies(id: number): Promise<Movies>{

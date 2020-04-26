@@ -31,8 +31,6 @@ export class UsersService {
 
     async postUsers(createUsersDto: createUsersDto): Promise<Users>{
         let lista_genres = []
-
-        // [1, 2]
         for(let id_genre of createUsersDto.fgenre){
             let found = await this.genreRepository.findOne(id_genre);
             if (found) {
@@ -43,8 +41,22 @@ export class UsersService {
     }
 
     async updateUsers(id: number, updateUsersDto: createUsersDto): Promise<Users>{
-        await this.usersRepository.update(id, updateUsersDto)
-        return this.getById(id);
+        
+        let lista_genres = []
+        for(let id_genre of updateUsersDto.fgenre){
+            let found = await this.genreRepository.findOne(id_genre);
+            if (found) {
+                lista_genres.push(found)
+            }
+        }
+        updateUsersDto.fgenre = lista_genres;
+
+        const property = await this.usersRepository.findOne(id);
+        
+        return this.usersRepository.save({
+            ...property,
+            ...updateUsersDto
+        });
     }
 
     async removeUsers(id: number): Promise<Users>{
