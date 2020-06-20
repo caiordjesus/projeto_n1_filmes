@@ -5,7 +5,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     host: 'localhost',
     port: 3306,
     username: 'root',
-    password: '1234',
+    password: 'root',
     database: 'projeto_n1',
     entities: [__dirname + '/../**/*.entity.{js, ts}'], // caso não coloque {js, ts} não funciona!!!
     synchronize: true,
