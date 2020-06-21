@@ -1,12 +1,12 @@
-let BASE_URL ="http://localhosy:3000/movies/";
+let URL ="http://localhost:3000/";
 
 window.onload = function(){
-    getFilmes((status, filmes) => {
+    getFilmes((status, movies) => {
     showFilmes(filmes);    
     })
 }
 
-function getFilmes(filme){
+function getFilmes(callback){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', URL + "movies", true);
     xhr.responseType = 'json';
@@ -14,7 +14,7 @@ function getFilmes(filme){
     xhr.onload = function (){
         var status = xhr.status;
         if (status === 200){
-            filme(status, xhr, response);
+            callback(status, xhr.response);
             console.log("OK" + status);
         } else {
             console.log("NAO ACEITO" + status);
@@ -27,13 +27,13 @@ function showFilmes(movies){
     var html= "<section>";
     for(var i=0; i<movies.length; i++){
         html += "<article>" +
-        "<p>"+ movies[i].name +"</p>"+
-        "<p>"+ movies[i].classfication +"</p>"+
-        "<p>"+ movies[i].id +"</p>"+
-        "<p>"+ movies[i].genre +"</p>"+
+        "<p>Nome:"+ movies[i].name +"</p>"+
+        "<p>Classificação:"+ movies[i].classfication +"</p>"+
+        "<p>Id:"+ movies[i].id +"</p>"+
+        "<p>Genêro:"+ movies[i].genre +"</p>"+
         "</article>";
     }
-    html= "</section>"
+    html+= "</section>"
 
     document.getElementById("movies").innerHTML = html;
 }
