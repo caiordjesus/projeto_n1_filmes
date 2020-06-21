@@ -2,7 +2,7 @@ let URL ="http://localhost:3000/";
 
 window.onload = function(){
     getFilmes((status, movies) => {
-    showFilmes(filmes);    
+    showFilmes(movies);    
     })
 }
 
