@@ -24,14 +24,12 @@ function getGeneros(callback){
 }
 
 function printGeneros(genre) {
-    var html = "<section>";
     for(var i=0; i < genre.length; i++) {
-        html += "<article>" +
-            "<h1>" + genre[i].name + "</h1>" +
-            "<p> id: " + genre[i].id + "</p>" +
-            "</article>";
+        document.getElementById('tgeneros').innerHTML += `
+        <tr>
+            <td>${genre[i].id}</td>
+            <td>${genre[i].name}</td>
+        </tr>  
+    `;
     }
-    html += "</section>"
-
-    document.getElementById("genre").innerHTML = html;
 }
