@@ -6,6 +6,10 @@
     <title>Filmes - Projeto N2</title>
 
     <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/chart.css" rel="stylesheet">
+    <link href="../build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script src="../build/nv.d3.js"></script>
 
 </head>
 
@@ -21,8 +25,13 @@
         </div>
         <div id="page">
             <h1 class="">Gráfico de gêneros preferidos</h1>
+            <div id="chart1">
+                <svg></svg>
+            </div>
         </div>
     </section>
+
+    <script src="./js/inicio.js"></script>
 </body>
 
 </html>
