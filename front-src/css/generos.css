@@ -17,6 +17,7 @@ body{
     padding-bottom: 15px;
     padding-right: 15px;
     padding-left: 15px;
+    width: 100%;
 }
 
 #header{
@@ -31,10 +32,21 @@ body{
 footer{
     position:absolute;
     bottom:0;
-    width:100%;
-    text-align: center;
-    background-color: rgb(255,136,0);
-}
+    width:65%;
+    display: flex;
+    height: 2.5vw;
+    justify-content: center;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    background-color: black;
+    align-items: center;
+    color: black;
+    background-color:rgb(255,136,0);
+    font-size: 1.4vw;
+    border-radius: 0.5vw;
+    }
 
 table {
     font-family: arial, sans-serif;
@@ -85,4 +97,42 @@ ul li a:hover {
     background-color: rgb(255,136,0);
     border: 1px solid white; 
     border-radius: 20px;
+}
+
+/* Tablets pequenos */
+@media screen and (min-width: 620px){
+    #section1{
+        grid-template-columns: repeat(12,1fr);
+    }
+    #section2{
+        grid-template-columns: repeat(12,1fr);
+        font-size: 10px;
+    }
+}
+
+/* Telas grandes e notebooks */
+@media screen and (min-width: 960px){
+    #section1{
+        grid-template-columns: repeat(12,1fr);
+    }
+    
+    #section2{
+        grid-template-columns: repeat(12,1fr);
+        font-size: 11px;
+        grid-column: 2/3;
+    
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1200px){
+    #section1{
+        grid-template-columns: repeat(12,1fr);
+    }
+    
+    #section2{
+        grid-template-columns: repeat(1, 1fr);
+        font-size: 12px;
+    }
+    
 }
