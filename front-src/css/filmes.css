@@ -2,30 +2,27 @@ body {
     background-color: #161B33;
 }
 
-#page{
-    text-align: center;
-    
+#linha{
+    background-color: rgb(255, 136, 0);
+    padding: 3px;
+    margin-bottom: 10px;
 }
 
-wrapper{
+#wrapper{
     display: grid;
     grid-template-columns: repeat(12,1fr);
 }
 
-legend{
-    text-align: center;
-
-}
-
 #h1{
-    
+    font-family: arial, sans-serif;
+    color: black;
 }
 
 footer{
-        display: flex;
+    display: flex;
     height: 2.5vw;
     justify-content: center;
-    margin-top: 0.5vw;
+    margin-top:0.5vw;
     margin-bottom: 0.5vw;
     margin-left: 15vw;
     margin-right: 15vw;
@@ -35,8 +32,10 @@ footer{
     background-color:rgb(255,136,0);
     font-size: 1.4vw;
     border-radius: 0.5vw;
+    bottom: 0;
+    width:65%;
 }
-}
+
 
 section {
     display: grid;
@@ -48,6 +47,27 @@ section {
 
 #page {
     grid-column: 3/12;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(255,136,0);
+    border-radius: 0.5vw;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+tr, th{
+    border: 1px;
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    font-family: arial, sans-serif;
+    background-color: rgb(255,136,0);
+    border-radius: 0.5vw;
 }
 
 ul {
@@ -55,10 +75,13 @@ ul {
     padding: 0;
     list-style: none;
     width: 150px;
+    text-align: center;
+    font-family: arial, sans-serif;
 }
 
 ul li {
     position: relative;
+    margin-bottom: 3px;
 }
 li ul {
     position: absolute;
@@ -77,3 +100,53 @@ ul li a {
     border-radius: 0.5vw;
 }
 
+ul li a:hover {
+    display: block;
+    text-decoration: none;
+    color: black;
+    background: rgb(255,136,0);
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 0.5vw;
+}
+
+
+@media screen and (min-width:620px)
+    {
+        footer{
+            display: flex;
+            width: 97vw;
+            height:2vw;
+            justify-content: center;
+            margin: 1vw;
+            align-content: center;
+            border-radius: 0.5vw;
+            font-size: 2vw;
+        }
+        #wrapper{
+            grid-template-columns: repeat(12,1fr);
+        }
+}
+
+@media screen and (min-width:960px)
+{
+    #wrapper {
+        flex-direction: column;
+        width: 100vw;
+    }
+}
+
+@media screen and (min-width:1200px){
+    #wrapper{
+        grid-template-columns: repeat(12,1fr);
+    }
+    footer{
+            display: flex;
+            width: 97vw;
+            height:2vw;
+            justify-content: center;
+            margin: 1vw;
+            align-content: center;
+            border-radius: 0.5vw;
+            font-size: 2vw;
+}
