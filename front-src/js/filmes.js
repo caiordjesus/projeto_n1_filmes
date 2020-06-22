@@ -24,16 +24,15 @@ function getFilmes(callback){
 }
 
 function showFilmes(movies){
-    var html= "<section>";
+    var html= "<tr>";
     for(var i=0; i<movies.length; i++){
-        html += "<article>" +
-        "<p>Nome:"+ movies[i].name +"</p>"+
-        "<p>Classificação:"+ movies[i].classfication +"</p>"+
-        "<p>Id:"+ movies[i].id +"</p>"+
-        "<p>Genêro:"+ movies[i].genre +"</p>"+
-        "</article>";
+        html += 
+        "<td>"+ movies[i].name +"</td>"+
+        "<td>"+ movies[i].classfication +"</td>"+
+        "<td>"+ movies[i].id +"</td>"+
+        "<td>"+ movies[i].genre +"</td>";
     }
-    html+= "</section>"
+    html+= "</tr>"
 
     document.getElementById("t").innerHTML = html;
 }
