@@ -27,11 +27,25 @@ li ul {
     display: none;
 }
 
+
 ul li a {
+    text-align: center;
     display: block;
     text-decoration: none;
-    color: #E2144A;
-    background: #fff;
+    color: rgb(0, 0, 0);
     padding: 5px;
-    border: 1px solid #ccc; 
+    background-color: white;
+    border: 1px solid rgb(255,136,0); 
+    border-radius: 20px;
+}
+
+ul li a:hover {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    background-color: rgb(255,136,0);
+    border: 1px solid white; 
+    border-radius: 20px;
 }

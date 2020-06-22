@@ -1,0 +1,88 @@
+/* Tablets pequenos */
+@media screen and (min-width: 620px){
+    #section1{
+        grid-template-columns: repeat(12,1fr);
+    }
+    #section2{
+        grid-template-columns: repeat(12,1fr);
+        font-size: 10px;
+    }
+    ul {
+        margin: 3px;
+        padding: 0;
+        list-style: none;
+        width: 150px;
+    }
+    
+    ul li {
+        position: relative;
+        margin-bottom: 3px;;
+    }
+    li ul {
+        position: absolute;
+        left: 149px;
+        top: 0;
+        display: none;
+    }
+}
+
+/* Telas grandes e notebooks */
+@media screen and (min-width: 960px){
+    #section1{
+        grid-template-columns: repeat(12,1fr);
+    }
+    
+    #section2{
+        grid-template-columns: repeat(12,1fr);
+        font-size: 11px;
+        grid-column: 2/3;
+    
+    }
+    ul {
+        margin: 3px;
+        padding: 0;
+        list-style: none;
+        width: 150px;
+    }
+    
+    ul li {
+        position: relative;
+        margin-bottom: 3px;;
+    }
+    li ul {
+        position: absolute;
+        left: 149px;
+        top: 0;
+        display: none;
+    }
+}
+
+/* Desktops */
+@media screen and (min-width: 1200px){
+    #section1{
+        grid-template-columns: repeat(12,1fr);
+    }
+    
+    #section2{
+        grid-template-columns: repeat(1, 1fr);
+        font-size: 12px;
+    }
+    ul {
+        margin: 3px;
+        padding: 0;
+        list-style: none;
+        width: 150px;
+    }
+    
+    ul li {
+        position: relative;
+        margin-bottom: 3px;;
+    }
+    li ul {
+        position: absolute;
+        left: 149px;
+        top: 0;
+        display: none;
+    }
+    
+}
