@@ -35,5 +35,5 @@ function showFilmes(movies){
     }
     html+= "</section>"
 
-    document.getElementById("movies").innerHTML = html;
+    document.getElementById("t").innerHTML = html;
 }
