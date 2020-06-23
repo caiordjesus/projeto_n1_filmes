@@ -66,6 +66,7 @@ ul {
     padding: 0;
     list-style: none;
     width: 100px;
+    font-family: arial, sans-serif;
 }
 
 ul li {
@@ -118,7 +119,7 @@ ul li a:hover {
     
     ul li {
         position: relative;
-        margin-bottom: 3px;;
+        margin-bottom: 3px;
     }
     li ul {
         position: absolute;
