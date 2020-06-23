@@ -3,7 +3,7 @@ body{
     background-position: center;
 }
 #header{
-    background-color: rgb(255, 136, 0);
+    background-color: rgb(128,0,0);
     padding: 3px;
     margin-bottom: 10px;
 }
@@ -24,17 +24,18 @@ footer{
     background-color: black;
     align-items: center;
     color: black;
-    background-color:rgb(255,136,0);
+    background-color:rgb(128,0,0);
     font-size: 1.4vw;
     border-radius: 0.5vw;
 }
 #page {
-    box-shadow: -1px 6px 21px 8px rgba(255, 136, 0);
-    background-color: white;
+    box-shadow: -1px 6px 21px 8px rgb(128,0,0);
+    background-color: rgb(128,0,0);
     grid-column: 4/9;
     border-radius: 10px;
     padding-bottom: 15px;
     padding-right: 15px;
     padding-left: 15px;
     width: 160%;
+    font-family: arial, sans-serif;
 }
