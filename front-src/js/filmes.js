@@ -24,7 +24,7 @@ function getFilmes(callback){
 }
 
 function showFilmes(movies){
-   for(var i=0; i < genre.length; i++) {
+   for(var i=0; i < movies.length; i++) {
         document.getElementById('t').innerHTML +=
          `<tr>
             <td>${movies[i].id}</td>
