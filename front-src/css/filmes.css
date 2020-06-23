@@ -49,7 +49,7 @@ section {
 #page {
     grid-column: 4/9;
     text-align: center;
-    width: 120%;
+    width: 160%;
     background-color:rgb(180,180,180);
     border-radius: 10px;
     padding-bottom: 15px;
@@ -118,34 +118,24 @@ ul li a:hover {
 
 
 /*tablets pequenos*/
-@media screen and (min-width:620px)
-    {
-        footer{
-            display: flex;
-            width: 97vw;
-            height:2vw;
-            justify-content: center;
-            margin: 1vw;
-            align-content: center;
-            border-radius: 0.5vw;
-            font-size: 10px;
-        }
-        #wrapper{
-            grid-template-columns: repeat(12,1fr);
-        }
-        
-        th, td{
-        font-size: 13px;
+@media screen and (min-width:620px){
+    #wrapper{
+        grid-template-columns: repeat(12,1fr);
     }
-        #section2{
-            grid-template-columns: repeat(12,1fr);
-        }
         
-        ul {
-        margin: 3px;
-        padding: 0;
-        list-style: none;
-        width: 150px;
+    th, td{
+    font-size: 13px;
+    }
+    #section{
+        grid-template-columns: repeat(12,1fr);
+        font-size: 10px;
+    }
+        
+    ul {
+    margin: 3px;
+    padding: 0;
+    list-style: none;
+    width: 150px;
     }
     
     ul li {
@@ -159,6 +149,7 @@ ul li a:hover {
         display: none;
     }
 }
+
 /*telas grandes e notebooks*/
 @media screen and (min-width:960px)
 {
@@ -166,20 +157,11 @@ ul li a:hover {
         flex-direction: column;
         width: 100vw;
     }
-    footer{
-            display: flex;
-            width: 97vw;
-            height:2vw;
-            justify-content: center;
-            margin: 1vw;
-            align-content: center;
-            border-radius: 0.5vw;
-            font-size: 11px;
-    }
     
-    #section2{
+    #section{
          grid-template-columns: repeat(12,1fr);
          grid-column: 2/3;
+         font-size: 11px;
     }
     
     th, td{
@@ -210,21 +192,10 @@ ul li a:hover {
     #wrapper{
         grid-template-columns: repeat(12,1fr);
     }
-    footer{
-            display: flex;
-            width: 97vw;
-            height:2vw;
-            justify-content: center;
-            margin: 1vw;
-            align-content: center;
-            border-radius: 0.5vw;
-            font-size: 12px;
-        
-    }
     
-    #section2{
-         grid-template-columns: repeat(12,1fr);
-         grid-column: 3/7;
+    #section{
+        grid-template-columns: repeat(1,1fr);
+        font-size: 12px;
     }
     
     th, td{
