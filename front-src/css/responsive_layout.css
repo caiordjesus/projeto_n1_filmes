@@ -25,7 +25,7 @@
         display: none;
     }
     td, th {
-        font-size: 16px;
+        font-size: 13px;
     }
 }
 
@@ -73,6 +73,9 @@
     #section2{
         grid-template-columns: repeat(1, 1fr);
         font-size: 12px;
+    }
+    #page{
+        grid-column: 4/7;
     }
     ul {
         margin: 3px;
