@@ -25,12 +25,15 @@ function getFilmes(callback){
 
 function showFilmes(movies){
    for(var i=0; i < movies.length; i++) {
+       x = Array.from(movies[i].genres)
+       for(var j=0; j < x.length; j++){
+            t = x[j].name;}
         document.getElementById('t').innerHTML +=
          `<tr>
             <td>${movies[i].id}</td>
             <td>${movies[i].name}</td>
             <td>${movies[i].classification}</td>
-            <td>${movies[i].genre}</td>
+            <td>${t}</td>
         </tr>`;
     }
 }
