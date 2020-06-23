@@ -1,14 +1,11 @@
 text {
     font-family: arial, sans-serif;
 }
-svg {
-    display: block;
-}
-html, body, #chart1, svg {
-    margin: 0px;
+#chart1, svg {
+    margin: 10px;
     padding: 0px;
     height: 100%;
-    width: 100%;
+    width: 85%;
 }
 
 
