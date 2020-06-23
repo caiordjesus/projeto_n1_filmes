@@ -24,15 +24,13 @@ function getFilmes(callback){
 }
 
 function showFilmes(movies){
-    var html= "<tr>";
-    for(var i=0; i<movies.length; i++){
-        html += 
-        "<td>"+ movies[i].name +"</td>"+
-        "<td>"+ movies[i].classfication +"</td>"+
-        "<td>"+ movies[i].id +"</td>"+
-        "<td>"+ movies[i].genre +"</td>";
+   for(var i=0; i < genre.length; i++) {
+        document.getElementById('t').innerHTML +=
+         `<tr>
+            <td>${movies[i].id}</td>
+            <td>${movies[i].name}</td>
+            <td>${movies[i].classification}</td>
+            <td>${movies[i].genre}</td>
+        </tr>`;
     }
-    html+= "</tr>"
-
-    document.getElementById("t").innerHTML = html;
 }
