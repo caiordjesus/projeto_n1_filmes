@@ -16,6 +16,10 @@ export class GenreService {
         return this.genreRepository.getGenre();
     }
 
+    async get_genre_by_fav(): Promise<Genre[]>{
+        return this.genreRepository.get_genre_by_fav();
+    }
+
     async getById(id: number): Promise<Genre> {
         const found = await this.genreRepository.findOne(id);
 

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Param, UsePipes, Body, ValidationPipe, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, UsePipes, Body, ValidationPipe, ParseIntPipe, Query } from '@nestjs/common';
 import { GenreService } from './genre.service';
 import { Genre } from './genre.entity';
 import { createGenreDto } from './dto/create-genre.dto';
@@ -10,8 +10,12 @@ export class GenreController {
     ){}
 
     @Get()
-    async getGenre(): Promise<Genre[]> {
-        return this.genreService.findAll();
+    async getGenre(@Query('grouped') grouped: boolean): Promise<Genre[]> {
+        if(grouped){
+            return this.genreService.get_genre_by_fav();    
+        } else {
+            return this.genreService.findAll();
+        }
     }
 
     @Post()
