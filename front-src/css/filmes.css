@@ -1,5 +1,6 @@
 body {
   background-color: rgb(46,46,46);
+  overflow-x: hidden;
 }
 
 #linha{
@@ -47,7 +48,7 @@ section {
 }
 
 #page {
-    grid-column: 4/9;
+    grid-column: 3/8;
     text-align: center;
     width: 160%;
     background-color:rgb(180,180,180);

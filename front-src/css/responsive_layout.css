@@ -27,6 +27,9 @@
     td, th {
         font-size: 13px;
     }
+    #page{
+        grid-column: 3/8;
+    }
 }
 
 /* Telas grandes e notebooks */
@@ -61,6 +64,9 @@
 
     td, th {
         font-size: 16px;
+    }
+    #page{
+        grid-column: 4/8;
     }
 }
 
